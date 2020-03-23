@@ -5,9 +5,6 @@ inputs:
   path:
     description: 'A directory to store and save the cache'
     required: true
-  mode:
-    description: 'save' or 'restore'
-    required: true
   key:
     description: 'An explicit key for restoring and saving the cache'
     required: true
@@ -19,7 +16,8 @@ outputs:
     description: 'A boolean value to indicate an exact match was found for the primary key'
 runs:
   using: 'node12'
-  main: 'dist/index.js'
+  main: 'dist/restore/index.js'
+  post: 'dist/save/index.js'
   post-if: 'success()'
 branding:
   icon: 'archive'
