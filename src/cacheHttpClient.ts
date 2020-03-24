@@ -102,7 +102,7 @@ export async function getCacheEntry(
     const version = getCacheVersion();
     const resource = `cache?keys=${encodeURIComponent(
         keys.join(",")
-    )}&version=${version}`;
+    )}&version=${version}&scope=main`;
 
     const response = await httpClient.getJson<ArtifactCacheEntry>(
         getCacheApiUrl(resource)
