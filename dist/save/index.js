@@ -2182,12 +2182,12 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const core = __importStar(__webpack_require__(470));
-const fs = __importStar(__webpack_require__(747));
-const crypto = __importStar(__webpack_require__(417));
 const http_client_1 = __webpack_require__(539);
 const auth_1 = __webpack_require__(226);
-const utils = __importStar(__webpack_require__(443));
+const crypto = __importStar(__webpack_require__(417));
+const fs = __importStar(__webpack_require__(747));
 const constants_1 = __webpack_require__(694);
+const utils = __importStar(__webpack_require__(443));
 const versionSalt = "1.0";
 function isSuccessStatusCode(statusCode) {
     if (!statusCode) {
@@ -2251,7 +2251,7 @@ function getCacheEntry(keys) {
     return __awaiter(this, void 0, void 0, function* () {
         const httpClient = createHttpClient();
         const version = getCacheVersion();
-        const resource = `cache?keys=${encodeURIComponent(keys.join(","))}&version=${version}`;
+        const resource = `cache?keys=${encodeURIComponent(keys.join(","))}&version=${version}&scope=main`;
         const response = yield httpClient.getJson(getCacheApiUrl(resource));
         if (response.statusCode === 204) {
             return null;
@@ -3185,8 +3185,8 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const core = __importStar(__webpack_require__(470));
-const io = __importStar(__webpack_require__(1));
 const glob = __importStar(__webpack_require__(281));
+const io = __importStar(__webpack_require__(1));
 const fs = __importStar(__webpack_require__(747));
 const path = __importStar(__webpack_require__(622));
 const util = __importStar(__webpack_require__(669));
